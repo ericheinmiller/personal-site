@@ -1,0 +1,21 @@
+.folder-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  cursor: pointer;
+  p {
+    margin: 0px;
+    padding: 1px;
+    color: white;
+    font-family: MyFont;
+    font-size: .5em;
+    border: 1px dotted teal;
+  }
+}
+
+.clickedText {
+  border: 1px dotted white;
+  background-color: blue;
+}

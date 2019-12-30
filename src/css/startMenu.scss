@@ -1,0 +1,30 @@
+.startMenu {
+  width: 250px;
+  border: 2px solid black;
+  position: fixed;
+  left: 3px;
+  bottom: 32px;
+  z-index: 10;
+  background-color: silver;
+}
+
+.startMenu-wrapper {
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid gray;
+  height: 100%;
+  z-index: 10;
+  border-bottom: 1px solid gray;
+  display: flex;
+  flex-direction: row;
+}
+
+.startMenu--container {
+  width: 100%;
+}
+
+.gradient-bar {
+  width: 30px;
+  background: rgb(14,0,255);
+  background: linear-gradient(360deg, rgba(14,0,255,1) 0%, rgba(0,0,0,1) 62%);
+}

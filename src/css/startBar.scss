@@ -1,0 +1,15 @@
+.startBar {
+  box-shadow: inset 1px 0 #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: silver;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #f4f4f4;
+  border-bottom: 1px solid #4e4e4e;
+  position: fixed;
+  z-index: 9;
+  height: 33px;
+}

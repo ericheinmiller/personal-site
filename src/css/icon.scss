@@ -1,0 +1,24 @@
+.icon {
+  a {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+    margin: 10px;
+    text-decoration: none;
+
+  }
+}
+
+.icon__icon {
+  margin: 5px;
+}
+
+.icon__title {
+  margin: 0px;
+  padding: 1px;
+  color: black;
+  font-family: MyFont;
+  font-size: .5em;
+  border: 1px dotted white;
+}

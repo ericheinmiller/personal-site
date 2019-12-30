@@ -1,0 +1,164 @@
+.startBarButton {
+  margin-left: 5px;
+  width: 70px;
+  height: 25px;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+}
+
+.startBarButtonWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid gray;
+  border-right: 2px solid gray;
+}
+
+.startBarButton__text {
+  font-family: MyFont;
+  font-size: 8px;
+}
+
+.startBarButton__logo {
+  width: 75%;
+}
+
+.barButton {
+  margin-left: 5px;
+  width: 110px;
+  height: 23px;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.barButton--highlight {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  .barButtonWrapper {
+    border-bottom: none !important;
+    border-right: none !important;
+    background-color: lightgray;
+  }
+}
+
+.barButtonWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #5e5e5e;
+  border-right: 1px solid #5e5e5e;
+  img {
+    height: 20px;
+    margin-top: 4px;
+    margin-left: 6px;
+  }
+}
+
+
+.barButton__text {
+  margin-left: 5px;
+  font-family: MyFont;
+  font-size: 8px;
+}
+
+.barButton__logo {
+  width: 75%;
+}
+
+.menuButton {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: #000081;
+    .menuButton__title, .menuButton__arrow {
+      color: white;
+    }
+  }
+}
+
+.menuButton__title {
+  font-family: MyFont;
+  font-size: 12px;
+  color: black;
+  margin-left: 15px;
+}
+
+.menuButton__title--introduction {
+  line-height: normal;
+}
+
+.menuButton__arrow {
+  margin-left: auto;
+  color: black;
+  margin-right: 10px;
+}
+
+.menuButton-subMenu-container {
+  position: absolute;
+  left: 220px;
+  background-color: silver;
+  width: 250px;
+  border: 2px solid black;
+}
+
+.menuButton-subMenu-container-wrapper {
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+}
+
+.subMenuButton {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 25px;
+  padding-left: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    background-color: #000081;
+    .subMenuButton__title, .subMenuButton__arrow {
+      color: white;
+    }
+  }
+}
+
+.subMenuButton__icon {
+  height: 20px;
+};
+
+.subMenuButton__title {
+  font-family: MyFont;
+  font-size: 9px;
+  color: black;
+  margin-left: 15px;
+}
+
+.subMenuButton__arrow {
+  margin-left: auto;
+  color: black;
+  margin-right: 10px;
+}
