@@ -4,7 +4,7 @@ export default ({ icon }) => {
   const noUrl = (
     <div className="icon">
       <a href={icon.file} download>
-        <img src={icon.icon} className="icon__icon" />
+        <img src={icon.icon} alt="icon" className="icon__icon" />
         <p className="icon__title">
           { icon.title }
         </p>
@@ -14,7 +14,7 @@ export default ({ icon }) => {
   const withUrl = (
     <div className="icon">
       <a href={icon.url}>
-        <img src={icon.icon} className="icon__icon" />
+        <img src={icon.icon} alt="icon" className="icon__icon" />
         <p className="icon__title">
           { icon.title }
         </p>

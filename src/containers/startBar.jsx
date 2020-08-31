@@ -6,7 +6,12 @@ import StartBarButton from '../components/startBarButton';
 import Clock from '../components/clock';
 import { toggleStartMenu } from '../actions/folderActions';
 
-const StartBar = ({ windowArray, toggleStartMenuAction, toggle, highlightedElement }) => {
+const StartBar = ({
+  windowArray,
+  toggleStartMenuAction,
+  toggle,
+  highlightedElement,
+}) => {
   const handleClick = () => {
     if (!toggle) {
       toggleStartMenuAction(true);
@@ -23,21 +28,21 @@ const StartBar = ({ windowArray, toggleStartMenuAction, toggle, highlightedEleme
         </div>
       </div>
       <div className="break--left" />
-      { windowArray.map(item => <StartBarButton key={item.identifier} title={item.title} highlightedElement={highlightedElement} />) }
+      { windowArray.map((item) => <StartBarButton key={item.identifier} title={item.title} highlightedElement={highlightedElement} />) }
       <div className="break" />
       <Clock />
     </div>
   );
 };
 
-const mapDispatchToProps = dispatch => ({
-  toggleStartMenuAction: toggle => dispatch(toggleStartMenu(toggle)),
-});
-
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   windowArray: state.window,
   highlightedElement: state.highlightedElement,
   toggle: state.menu.toggle,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  toggleStartMenuAction: (toggle) => dispatch(toggleStartMenu(toggle)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(StartBar);

@@ -13,3 +13,15 @@
   z-index: 9;
   height: 33px;
 }
+
+.clock__text {
+  display: flex;
+  flex-direction: row;
+}
+
+.text--visible {
+}
+
+.text--invisible {
+  display: none;
+}

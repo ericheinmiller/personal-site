@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Folder from './folder';
 import Window from './window';
 import StartBar from './startBar';
 import StartMenu from './startMenu';
-import { deselectFolder, dragElement, setHighlightElement, toggleStartMenu, clearDragTarget } from '../actions/folderActions';
+import {
+  deselectFolder,
+  dragElement,
+  setHighlightElement,
+  toggleStartMenu,
+  clearDragTarget,
+} from '../actions/folderActions';
 
 const App = ({
   deselectFolder,
@@ -18,7 +24,7 @@ const App = ({
   dragIdentifier,
 }) => {
   const handleMouseDown = (e) => {
-    const className = e.target.className;
+    const { className } = e.target;
     if (className !== 'folder') {
       deselectFolder();
     }
@@ -39,24 +45,24 @@ const App = ({
   };
 
   return (
-    <div onMouseDown={e => handleMouseDown(e)} onMouseUp={() => handleMouseUp()} onMouseMove={e => handleMouseMove(e)} className="app-container">
-      { folders.map(title => <Folder key={`folder-${title}`} title={title} identifier={`folder-${title}`} />) }
+    <div onMouseDown={(e) => handleMouseDown(e)} onMouseUp={() => handleMouseUp()} onMouseMove={(e) => handleMouseMove(e)} className="app-container">
+      { folders.map((title) => <Folder key={`folder-${title}`} title={title} identifier={`folder-${title}`} />) }
       { toggle ? <StartMenu /> : null }
       <StartBar />
-      { windowArray.length ? windowArray.map(item => <Window title={item.title} key={`window-${item.title}`} identifier={`window-${item.title}`} />) : null }
+      { windowArray.length ? windowArray.map((item) => <Window title={item.title} key={`window-${item.title}`} identifier={`window-${item.title}`} />) : null }
     </div>
   );
 };
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   deselectFolder: () => dispatch(deselectFolder()),
   dragElement: (key, top, left) => dispatch(dragElement(key, top, left)),
-  setHighlightElement: identifier => dispatch(setHighlightElement(identifier)),
-  toggleStartMenuAction: value => dispatch(toggleStartMenu(value)),
+  setHighlightElement: (identifier) => dispatch(setHighlightElement(identifier)),
+  toggleStartMenuAction: (value) => dispatch(toggleStartMenu(value)),
   clearDragTargetAction: () => dispatch(clearDragTarget()),
 });
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   windowArray: state.window,
   folders: state.folder.folders,
   toggle: state.menu.toggle,
