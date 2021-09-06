@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { connect } from 'react-redux';
 import WindowButton from './windowButton';
 import Icon from '../images/directory_closed-1.png';
@@ -13,18 +13,20 @@ const Window = ({
   setHighlightElementAction,
   setDragTargetAction,
   position,
+  iterm,
 }) => {
   const thisWindow = windowArray.filter(item => item.identifier === identifier)[0];
+  const targetElement = useRef(null);
 
   const handleMouseDown = (e) => {
     setHighlightElementAction(identifier);
-    const initialLeft = e.clientX - e.target.getBoundingClientRect().left;
-    const initialTop = e.clientY - e.target.getBoundingClientRect().top;
+    const initialLeft = e.clientX - parseInt(targetElement.current.style.left);
+    const initialTop = e.clientY - parseInt(targetElement.current.style.top);
     setDragTargetAction(identifier, initialTop, initialLeft);
   };
 
   return (
-    <div className={`window ${highlightedElement === identifier ? 'window-highlight' : null}`} style={position[identifier]}>
+    <div ref={targetElement} className={`window ${highlightedElement === identifier ? 'window-highlight' : null}`} style={position[identifier]}>
       <div onMouseDown={e => handleMouseDown(e)} className={`window-bar ${highlightedElement === identifier ? 'window-bar--highlight' : ''}`} identifier={identifier}>
         <div className="window-title">
           <img src={Icon} className="window-title__icon" alt="Icon" />

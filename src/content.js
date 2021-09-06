@@ -49,4 +49,18 @@ export default {
       title: '408-660-9990',
     },
   ],
+  Apps: [
+    {
+      icon: Email,
+      title: 'App',
+      url: 'http://localhost:8080',
+    }
+  ],
+  Iterm: [
+    {
+      icon: Email,
+      title: 'Mini posts',
+      url: 'http://localhost:8080',
+    }
+  ],
 };

@@ -4,6 +4,7 @@ import Folder from './folder';
 import Window from './window';
 import StartBar from './startBar';
 import StartMenu from './startMenu';
+import Iterm from '../components/iterm';
 import {
   deselectFolder,
   dragElement,
@@ -22,6 +23,7 @@ const App = ({
   toggleStartMenuAction,
   clearDragTargetAction,
   dragIdentifier,
+  iterm,
 }) => {
   const handleMouseDown = (e) => {
     const { className } = e.target;

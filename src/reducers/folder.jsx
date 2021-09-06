@@ -5,7 +5,7 @@ import {
 } from '../actions/actionsTypes';
 
 const initialState = {
-  folders: ['Resume', 'Social', 'Contact'],
+  folders: ['Resume', 'Social', 'Contact', 'Apps'],
   selectedFolders: [],
 };
 

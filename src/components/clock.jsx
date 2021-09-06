@@ -20,7 +20,6 @@ export default () => {
     return () => clearTimeout(timer);
   }, [textClass, seconds]);
 
-
   return (
     <div className="clock">
       <img src={Internet} alt="Internet" />
