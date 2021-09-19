@@ -4,11 +4,9 @@ import Folder from './folder';
 import Window from './window';
 import StartBar from './startBar';
 import StartMenu from './startMenu';
-import Iterm from '../components/iterm';
 import {
   deselectFolder,
   dragElement,
-  setHighlightElement,
   toggleStartMenu,
   clearDragTarget,
 } from '../actions/folderActions';
@@ -19,11 +17,9 @@ const App = ({
   toggle,
   folders,
   dragElement,
-  setHighlightElement,
   toggleStartMenuAction,
   clearDragTargetAction,
   dragIdentifier,
-  iterm,
 }) => {
   const handleMouseDown = (e) => {
     const { className } = e.target;
@@ -59,7 +55,6 @@ const App = ({
 const mapDispatchToProps = (dispatch) => ({
   deselectFolder: () => dispatch(deselectFolder()),
   dragElement: (key, top, left) => dispatch(dragElement(key, top, left)),
-  setHighlightElement: (identifier) => dispatch(setHighlightElement(identifier)),
   toggleStartMenuAction: (value) => dispatch(toggleStartMenu(value)),
   clearDragTargetAction: () => dispatch(clearDragTarget()),
 });

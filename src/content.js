@@ -7,6 +7,7 @@ import DownloadWORD from './Eric_Heinmiller_resume.docx';
 import Webpage from './images/webpage.png';
 import Email from './images/email.png';
 import Phone from './images/phone.png';
+import Windows from './images/Windows-icon.png';
 
 export default {
   Resume: [
@@ -51,16 +52,16 @@ export default {
   ],
   Apps: [
     {
-      icon: Email,
-      title: 'App',
+      icon: Windows,
+      title: 'The Wall',
       url: 'http://localhost:8080',
-    }
+    },
   ],
   Iterm: [
     {
-      icon: Email,
+      icon: Windows,
       title: 'Mini posts',
       url: 'http://localhost:8080',
-    }
+    },
   ],
 };

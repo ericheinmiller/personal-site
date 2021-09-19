@@ -13,9 +13,8 @@ const Window = ({
   setHighlightElementAction,
   setDragTargetAction,
   position,
-  iterm,
 }) => {
-  const thisWindow = windowArray.filter(item => item.identifier === identifier)[0];
+  const thisWindow = windowArray.filter((item) => item.identifier === identifier)[0];
   const targetElement = useRef(null);
 
   const handleMouseDown = (e) => {
@@ -35,23 +34,23 @@ const Window = ({
         <WindowButton icon="x" identifier={identifier} />
       </div>
       <div className="window__window">
-        { thisWindow.content.map(icon => <IconLink key={`icon-${icon.title}`} icon={icon} />) }
+        { thisWindow.content.map((icon) => <IconLink key={`icon-${icon.title}`} icon={icon} />) }
       </div>
     </div>
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   windowArray: state.window,
   position: state.position,
   highlightedElement: state.highlightedElement,
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   deselectFolder: () => dispatch(deselectFolder()),
   dragElement: (key, top, left) => dispatch(dragElement(key, top, left)),
-  setHighlightElementAction: identifier => dispatch(setHighlightElement(identifier)),
-  toggleStartMenuAction: value => dispatch(toggleStartMenu(value)),
+  setHighlightElementAction: (identifier) => dispatch(setHighlightElement(identifier)),
+  toggleStartMenuAction: (value) => dispatch(toggleStartMenu(value)),
   setDragTargetAction: (identifier, top, left) => dispatch(setDragTarget(identifier, top, left)),
 });
 

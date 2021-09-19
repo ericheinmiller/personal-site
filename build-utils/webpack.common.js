@@ -22,9 +22,10 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif|jpeg|otf)$/,
-        use: [
-          'file-loader',
-        ],
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+        },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -48,6 +49,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
+      favicon: './src/favicon.ico',
       template: './src/index.html',
       title: 'Eric Heinmiller',
     }),

@@ -2,6 +2,7 @@ import React from 'react';
 
 export default ({ icon }) => {
   const handleClick = (e) => {
+    console.log('triggering');
     const shift = e.shiftKey;
     if (timer) {
       clearTimeout(timer);
